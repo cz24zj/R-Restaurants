@@ -21,7 +21,7 @@ var RateLimit = require('express-rate-limit');
 app.enable('trust proxy');
 app.use(express.static(__dirname +'/public'));
 // mongoose.connect('mongodb://localhost/restaurants');
-mongoose.connect('mongodb://cz24zj:czzj93723@ds046867.mlab.com:46867/r-restaurants');
+mongoose.connect(mlaburl);
 app.use(bodyparser.urlencoded({extended:true}));
 app.set('view engine','ejs');
 app.use(methodoverride('_method'));
