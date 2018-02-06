@@ -1,0 +1,174 @@
+.card-body img{
+    width:100%;
+}
+#deleteform{
+    display:inline;
+}
+#deletecomment{
+    display:inline;
+}
+
+.alertcus{
+    width:100%;
+    margin:0;
+    text-align:center;
+    position: relative;
+    padding: .75rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.form-signin{
+  
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  display: block;
+  margin: 20em auto;  
+  
+}
+
+.btn1{
+    margin:2em auto;
+    text-align:center;
+    display: block;
+    width:100%;
+}
+/*body{*/
+/*    background-image:url('http://pic.qiantucdn.com/58pic/21/45/23/89z58PICxta_1024.jpg!/fw/1024/watermark/url/L3dhdGVybWFyay12MS5wbmc=/align/north/repeat/true/crop/1024x768a0a0');*/
+/*    background-size:cover;*/
+/*    background-repeat: no-repeat;*/
+/*}*/
+body{
+    position:relative;
+    
+}
+
+
+.footer{
+    
+    color:black;
+    text-align:center;
+}
+
+html, body {
+
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    
+}
+     #map {
+        margin-left: 1em;
+        margin-right:1em;
+        height: 50%;
+        width:98%;
+        position: absolute; 
+        top: 0; 
+        left: 0;
+        right:0;
+        
+       
+      }
+      
+    .google-maps 
+    { 
+      position: relative; 
+      padding-bottom: 70%;
+      overflow: hidden; 
+      
+    }
+    
+     
+      #right-panel {
+        font-family: 'Roboto','sans-serif';
+        line-height: 2em;
+        padding-left: 1em;
+      }
+
+      #right-panel select, #right-panel input {
+        font-size: 1em;
+      }
+
+      #right-panel select {
+        width: 100%;
+      }
+
+      #right-panel i {
+        font-size: 0.8em;
+      }
+      #right-panel {
+        height: 50%;
+        top:50%;
+        position:absolute;
+        width: 100%;
+        overflow: auto;
+      }
+        
+
+        
+     .controls {
+        margin-top:0.2em;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 2em;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        width:5%;
+        height:2%;
+      }
+      #search,
+      #origin-input,
+      #destination-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 1.5em;
+        font-weight: 300;
+        margin-left: 1em;
+        padding: 0 0.2em 0 0.2em;
+        text-overflow: ellipsis;
+        width: 12em;
+        display:inline-block;
+        height:2em;
+      }
+
+      #search:focus,#origin-input:focus,
+      #destination-input:focus {
+        border-color: #4d90fe;
+      }
+      #mode-selector {
+        
+        margin-left: 0.5em;
+        padding: 0.2em 1em 0 1em;
+        font-family: Roboto;
+        font-size: 1em;
+        font-weight: 300;
+        
+      }
+      
+      
+
+ 
+     
+
+      #getcentered{
+      font-size:4em;
+      }
+      #check{
+        font-size:5em;
+        color:white;
+        padding:0;
+      }
+      @media print {
+        #map {
+          height: auto;
+          margin: 0;
+        }
+        #right-panel {
+          float: none;
+          width: auto;
+          height:20%;
+        }
+      }

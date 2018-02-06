@@ -1,0 +1,93 @@
+<% include ../partials/header %>
+ <div class = 'row'>
+        <div class = 'col-md-5 google-maps'>
+             
+        <div id="map"> </div>
+          
+        <div class = 'list-group'>
+            
+        <li><div id="right-panel"></div></li>
+            
+    <div id = 'searcharea'>
+  	<input id ='search' type = 'text' class = 'controls' placeholder = 'Search'>
+    <button type = 'submit' class = 'btn btn-primary' id ='btn'>Search</button>
+    <button type = 'submit' class = 'btn btn-success' id = 'clear'>Clear Markers</button>
+    </div> 
+  <div id = 'contain'>
+  <input id="origin-input" class="controls" type="text" placeholder="Origin Location ">
+  <input id="destination-input" class="controls" type="text" placeholder="Destination Location">
+  <br>
+   <div id="mode-selector" class="btn-group" role="group">
+      <button type="submit" class = "modebtn btn btn-primary"name="type" id="changemode-walking"><i class="material-icons">directions_walk</i>Walking</button>
+      <button type="submit" class = "modebtn btn btn-primary"name="type" id="changemode-bicycling"><i class="material-icons">directions_bike</i>Bicycling</button>
+      <button type="submit" class = "modebtn btn btn-primary"name="type" id="changemode-driving"><i class="material-icons">drive_eta</i>Driving</button>
+      <button type="submit" class = "modebtn btn btn-primary"name="type" id="changemode-transit"><i class="material-icons">directions_transit</i>Transit</button>
+   </div>
+   </div>
+    
+    
+   
+    <i id = "getcentered" class="btn btn-sm btn-primary rounded-circle fa fa-globe fa-pulse fa-spin center" aria-hidden="true"></i>
+    </div>
+        </div>
+        
+        <div class = 'col-md-7'>
+            <div class='card'>
+            <div class='card-header'><h4><a><%= foundrest.name %></a></h4></div>
+            <div class='card-body'>
+            <img class = 'img-fluid card-title' alt='Responsive image' src = <%= foundrest.img %> >
+            <p class='card-text'><%= foundrest.description %></p>
+            <p class = 'card-text'><em>Submitted By:<%= foundrest.author %></em></p>
+            <a class = 'btn btn-sm btn-primary' href = '/restaurants/<%= foundrest._id %>/comments/new'>Add New Comments</a>
+            <% if(currentuser && foundrest.author == currentuser.username){ %>
+            <a class ='btn btn-warning' href = '/restaurants/<%= foundrest._id %>/edit'>Edit</a>
+            <form id = 'deleteform' action = '/restaurants/<%= foundrest._id %>?_method=DELETE' method = 'POST'>
+                <button class = 'btn btn-sm btn-danger'>Delete</button>
+            </form>
+            <% } %>
+            </div>
+            <div class='card-footer text-muted'>Rate:<div class = 'rate'></div></div>
+            </div>
+            <hr>
+            <div class = 'card'>
+            <div class = 'card-body'>
+            <h4>Comments:</h4>
+            <br>
+            
+            <ul class='list-unstyled'>
+                    <% foundrest.comments.forEach(function(comment){ %>
+                    <li class='media'>
+                    <div class='media-body'>
+                    <h5 class='mt-0 mb-1'><%= comment.author%></h5>
+                    <%= comment.text %> 
+                    </div>
+                    <% if(currentuser && comment.author == currentuser.username){ %>
+                    <a href = '/restaurants/<%= foundrest._id %>/comments/<%= comment._id %>/edit' class ='btn btn-warning btn-xs'>Edit</a>
+                    <form id = 'deletecomment' action = '/restaurants/<%= foundrest._id %>/comments/<%= comment._id %>?_method=DELETE' method = 'POST'>
+                        <button class = 'btn btn-danger btn-xs'>Delete</button>
+                    </form>
+                    <% } %>
+                    </li>
+                    <hr>
+             <% }) %>
+             </ul>
+             </div>
+             </div>
+             
+             
+            
+               
+            </div>
+        </div>
+   
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuu5SRcQUAMvPn-0WfAeN9tFuy-eBC_Dk&libraries=places&callback=initMap" sync defer></script>
+<script src = '/assets/JS/api/map.js'></script>
+<script src = '/assets/JS/api/rate.js'></script>
+
+
+
+
+
+
+<% include ../partials/footer %>

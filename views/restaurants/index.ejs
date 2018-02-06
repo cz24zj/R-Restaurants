@@ -1,0 +1,41 @@
+<% include ../partials/header %>
+
+<header class = 'jumbotron'>
+  <div class = 'container'>
+  <img class='img-fluid' alt='Responsive image' src = 'https://images.pexels.com/photos/176381/pexels-photo-176381.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb'>
+  <h1 class='display-2'>Welcome to R-Restaurants </h1>
+  <p class='lead '>You are able to find lots of information about R-Restaurants from all over the world!</p>
+  <hr class='my-4 2em'>
+  <p class = 'text-uppercase'>Have Fun!</p>
+  <p class='lead'>
+    <a class='btn btn-primary btn-lg' href='/restaurants/new'>Create Your New R-Restaurants!</a>
+  </p>
+</div>
+</header>
+
+
+<div class = 'container'>
+<div class = 'row text-center'>
+<% for(var i = 0 ; i < restaurants.length; i++){ %>
+<div class = 'col-md-4'>
+  <div class ='card'>
+   <div class = 'card'>
+    <img class='img-fluid card-img-top' alt='Responsive image' src = <%= restaurants[i].img %>>
+     <div class = 'card-body'>
+       <h5 class = 'card-title'>
+         <%= restaurants[i].name %>
+       </h5>
+       <p class = 'card-text'><%= restaurants[i].description.substring(0,20) %></p>
+       <a href = '/restaurants/<%= restaurants[i]._id %>'>See description</a>
+      </div>
+    
+</div>
+</div>
+</div>
+<% } %>
+</div>
+</div>
+
+
+
+<% include ../partials/footer %>

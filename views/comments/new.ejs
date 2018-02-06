@@ -1,0 +1,13 @@
+<% include ../partials/header %>
+<div class = 'container'>
+<form action = '/restaurants/<%= foundrest._id %>/comments' method = 'POST'>
+ <div class='form-group'>
+    <label for='comments'>Comments</label>
+    <input type='text' class='form-control' id='comments' name = 'comments[text]' placeholder='comments'>
+  </div>
+  <button type='submit' class='btn btn-primary'>Submit</button>
+</form>
+</div>
+
+
+<% include ../partials/footer %>

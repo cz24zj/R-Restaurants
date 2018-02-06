@@ -1,0 +1,20 @@
+<% include ../partials/header %>
+<div class = 'container'>
+<h1>Create a New R-Restaurants</h1>
+<form action = '/restaurants' method = 'POST'>
+    <div class='form-group'>
+    <label for='InputName'>Restaurants Name</label>
+    <input type='Name' class='form-control' name = 'name' id='InputName' placeholder='Name of your R-Restaurants' required>
+  </div>
+  <div class='form-group'>
+    <label for='InputUrl'>Url</label>
+    <input type='Url' class='form-control' name = 'img' id='InputUrl' placeholder='Img Url' required>
+  </div>
+   <div class='form-group'>
+    <label for='InputDes'>Description</label>
+    <input type='text' class='form-control' name = 'description' id='InputDes' placeholder='Description' required>
+  </div>
+  <button type='submit' class='btn btn-primary'>Submit</button>
+</form>
+</div>
+<% include ../partials/footer %>

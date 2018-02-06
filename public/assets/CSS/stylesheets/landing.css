@@ -1,0 +1,98 @@
+body{
+    background:black;
+}
+h1{
+    color:white;
+    font-family: 'Bitter', serif;
+    font-weight: 700;
+    font-size:4em;
+}
+.footer{
+    color:white;
+    z-index:1;
+    position:absolute;
+    bottom:0;
+    right:45%;
+    left:45%;
+    width:10%;
+    box-sizing: border-box;
+    text-align:center;
+}
+
+.link{
+    font-size:2em;
+    margin:5em;
+}
+
+#landing-header{
+    z-index:1;
+    position:relative;
+    text-align:center;
+    padding-top:40vh;
+    
+}
+
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1){
+    background-image:url(https://images.pexels.com/photos/6458/city-restaurant-lunch-outside.jpg?w=1260&h=750&auto=compress&cs=tinysrgb);
+}
+.slideshow li:nth-child(2){
+    background-image:url(https://images.pexels.com/photos/9315/menu-restaurant-france-eating-9315.jpg?w=1260&h=750&auto=compress&cs=tinysrgb);
+    animation-delay:10s
+}
+.slideshow li:nth-child(3){
+    background-image:url(https://images.pexels.com/photos/34650/pexels-photo.jpg?w=1260&h=750&auto=compress&cs=tinysrgb);
+    animation-delay:20s;
+}
+.slideshow li:nth-child(4){
+    background-image:url(https://images.pexels.com/photos/239975/pexels-photo-239975.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb);
+    animation-delay:30s;
+}
+.slideshow li:nth-child(5){
+    background-image:url(https://images.pexels.com/photos/2755/restaurant.jpg?w=1260&h=750&auto=compress&cs=tinysrgb);
+    animation-delay:40s;
+}
+
+@keyframes imageAnimation {
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+
